@@ -12,6 +12,10 @@ $(document).ready(function() {
 
 	//function to create button for extremeSports array
 	function buttons () {
+
+		//to empty buttons div when adding new button
+		$("#buttons").empty();
+
 		for (i=0; i<extremeSports.length; i++) {
 			$("#buttons").append("<button data-sport='" + extremeSports[i] + "'>" + extremeSports[i] + "</button>");
 		}
@@ -41,7 +45,6 @@ $(document).ready(function() {
          })//end of ajax
 	 			.done(function(response) {
             var results = response.data;
-            console.log(results);
 
             for (i=0; i<results.length; i++) {
             	var sportDiv = $("<div class='item'>");
@@ -64,7 +67,7 @@ $(document).ready(function() {
 	}); //end of on click for button	
 
 	//function to switch gif from still to animate on click
-	 	$("#gifs").on("click", ".giphy", function() {	
+	$("#gifs").on("click", ".giphy", function() {	
 		
 		var state = $(this).attr("data-state");
 
@@ -78,5 +81,34 @@ $(document).ready(function() {
       }
 
 	});//end of on click for gif
+
+	//function to take user input to add a sport
+	$("#addSport").on("click", function(event) {
+	
+		event.preventDefault();
+
+
+		var sport = $("#sports-input").val().trim().toLowerCase();
+
+		if (sport.length===0) {
+			alert("Please enter in sport");
+		}
+		else {
+			if (jQuery.inArray(sport,extremeSports) == -1) {
+				extremeSports.push(sport);
+      		buttons();
+			}
+			else {
+				alert("This sport has already been added");
+			}
+
+		}		
+		$("#sports-input").val("");
+		// $(this).unbind("submit").submit();
+		$("#addSport").unbind("submit").submit();
+		// $("#addSport").unbind("submit", preventDefault);
+		console.log("can you see me");
+
+   });//end of on click for add a sport
 
 });//document ready
