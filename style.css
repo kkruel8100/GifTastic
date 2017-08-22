@@ -1,0 +1,70 @@
+body {
+	background: url("images/sports.png");
+}
+
+.row {
+	margin-bottom: 20px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	font-family: 'Roboto', sans-serif;
+	letter-spacing: .2em;
+}
+
+h1 {
+	text-align: center;
+	background-color: #d6dbe1;
+	color: #000;
+	border-radius: 20px;
+	padding: 20px 10px;
+
+}
+
+p {
+	font-weight: bold;
+	font-size: 14px;
+	margin-top: 5px;
+}
+
+label {
+	font-family: 'Roboto', sans-serif;
+	font-weight: bold;
+}
+
+.imgResults {
+	margin-left: 10px;
+	position: relative;
+}
+
+.item {
+	float: left;
+	margin: 5px;
+
+}
+
+#buttons {
+	margin-left: 5px;
+}
+
+button {
+	margin: 5px;
+	background-color: #47dcc8;
+	font-family: 'Roboto', sans-serif;
+	border-radius: 10px;
+}
+
+*:focus, button:focus {
+	outline: none;
+}
+
+input[type=submit] {
+	margin: 5px 0;
+	background-color: #47dcc8;
+	font-family: 'Roboto', sans-serif;
+	border-radius: 10px;
+}
+
+img {
+	width: auto;
+	height: 200px;
+}
