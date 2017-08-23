@@ -29,21 +29,21 @@ $(document).ready(function() {
 	buttons();
 
 	//function to get 10 gifs for the button clicked
-	$("button").on("click", function() {
+	$(document).on("click", "button", function() {
 			
-			clearGifs();
+		clearGifs();
 
-			var apikey = "4e4b50b6f0314f829c0063e9ff1db0cc";
-			var numResults = 10;
-			extremeSports = $(this).attr("data-sport");
-			var extremeSports = extremeSports.replace(/ /g, "+");
-			var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + extremeSports + "&limit=" + numResults + "&api_key=" + apikey;
+		var apikey = "4e4b50b6f0314f829c0063e9ff1db0cc";
+		var numResults = 10;
+		extremeSports = $(this).attr("data-sport");
+		var extremeSports = extremeSports.replace(/ /g, "+");
+		var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + extremeSports + "&limit=" + numResults + "&api_key=" + apikey;
 		 	
-		 	$.ajax({
+		$.ajax({
            url: queryURL,
            method: "GET"
-         })//end of ajax
-	 			.done(function(response) {
+        })//end of ajax
+	 	.done(function(response) {
             var results = response.data;
 
             for (i=0; i<results.length; i++) {
@@ -59,11 +59,11 @@ $(document).ready(function() {
             	sportDiv.prepend(p);
             	sportDiv.prepend(sportImage);
 
-            $("#gifs").prepend(sportDiv);
+            	$("#gifs").prepend(sportDiv);
 
             }
 
- 				});//end of response
+ 		});//end of response
 	}); //end of on click for button	
 
 	//function to switch gif from still to animate on click
@@ -72,13 +72,13 @@ $(document).ready(function() {
 		var state = $(this).attr("data-state");
 
 		if (state==="still") {
-         $(this).attr("src", $(this).attr("data-animate"));
+        	$(this).attr("src", $(this).attr("data-animate"));
           	$(this).attr("data-state", "animate");
-      }
-      else {
-         $(this).attr("src", $(this).attr("data-still"));
+      	}
+      	else {
+        	$(this).attr("src", $(this).attr("data-still"));
   			$(this).attr("data-state", "still");
-      }
+        }
 
 	});//end of on click for gif
 
@@ -86,7 +86,6 @@ $(document).ready(function() {
 	$("#addSport").on("click", function(event) {
 	
 		event.preventDefault();
-
 
 		var sport = $("#sports-input").val().trim().toLowerCase();
 
@@ -104,9 +103,7 @@ $(document).ready(function() {
 
 		}		
 		$("#sports-input").val("");
-		// $(this).unbind("submit").submit();
-		$("#addSport").unbind("submit").submit();
-		// $("#addSport").unbind("submit", preventDefault);
+		
 		console.log("can you see me");
 
    });//end of on click for add a sport
