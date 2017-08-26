@@ -7,7 +7,7 @@
 // "document.ready" makes sure that our JavaScript doesn't get run until the HTML document is finished loading.
 $(document).ready(function() {
 
-	var extremeSports = ["rock climbing", "wingsuit sky diving", "base jumping", "cliff jumping", "motocross", "free running", "bmx", "paragliding", "rafting", "bungee jumping", "american ninja warrior", "ice climbing"];
+	var extremeSports = ["skateboarding", "wingsuit sky diving", "base jumping", "snowboard", "motocross", "free running", "bmx", "extreme sports", "rafting", "bungee jumping", "american ninja warrior", "kung fu"];
 
 
 	//function to create button for extremeSports array
