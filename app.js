@@ -104,7 +104,7 @@ $(document).ready(function() {
 		}		
 		$("#sports-input").val("");
 		
-		console.log("can you see me");
+	
 
    });//end of on click for add a sport
 
