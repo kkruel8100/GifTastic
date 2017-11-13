@@ -1,6 +1,6 @@
 # GifTastic
 
-### The app uses the GIPHY API to make a duynamic web page that populates with gifs of extreme sports.  The app calls the GIPHY API and uses Javascript an jQuery to change the HTML of the website.
+### The app uses the GIPHY API to make a dynamic web page that populates with gifs of extreme sports.  The app calls the GIPHY API and uses Javascript an jQuery to change the HTML of the website.
 
 #### How the app works:
 
